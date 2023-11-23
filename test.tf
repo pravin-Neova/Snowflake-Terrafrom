@@ -24,14 +24,7 @@
 #       username =   "tf-snow" 
 # }
 
-# # terraform {
-# #   required_providers {
-# #     snowflake = {
-# #       source  = "Snowflake-Labs/snowflake"
-# #       version = "~> 0.61"
-# #     }
-# #   }
-# # }
+
 
 # # provider "snowflake" {
 # #   account  = "HMHMTUE.RV09349" # the Snowflake account identifier
