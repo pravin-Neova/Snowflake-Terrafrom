@@ -21,3 +21,15 @@ resource "snowflake_stage" "sale_stage" {
   database = snowflake_database.sale_database.name
   schema   = var.snowflake_stage_schema_sale
 }
+
+
+resource "snowflake_stage_grant" "ops_stage" {
+  database_name = snowflake_database.ops_database.name
+  schema_name   = var.snowflake_stage_schema_ops
+  stage_name    = snowflake_stage.ops_stage.name
+
+  privilege = "READ"
+
+  roles = [snowflake_role.ops_role.name]
+  with_grant_option = true
+}
