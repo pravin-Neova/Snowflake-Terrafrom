@@ -19,6 +19,13 @@ resource "snowflake_database_grant" "grant" {
   with_grant_option = true
 }
 
+resource "snowflake_database_grant" "grant_ops" {
+  database_name = snowflake_database.ops_database.name
+  privilege = "USAGE"
+  roles     = [snowflake_role.ops_role.name]
+  with_grant_option = true
+}
+
 # resource "snowflake_database_grant" "grant_public_role" {
 #   database_name = snowflake_database.ops_database.name
 #   privilege = "USAGE"

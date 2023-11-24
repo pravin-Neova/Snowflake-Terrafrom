@@ -59,3 +59,11 @@ resource "snowflake_role_grants" "grants" {
     snowflake_user.sales_public_user.name
   ]
 }
+
+// Assign opration role to public user ops
+resource "snowflake_role_grants" "grants" {
+  role_name = snowflake_role.ops_role.name
+  users = [
+    snowflake_user.ops_public_user.name
+  ]
+}
